@@ -1,0 +1,27 @@
+html, body {
+  position: relative;
+  height: 100%;
+  font-family: Arial;
+}
+
+body{
+  background-image: url('../images/bg.png');
+}
+#__bs_notify__{
+  opacity: .01;
+}
+input, button {
+  outline: none;
+}
+
+.wrapper-1200{
+  margin: auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.wrapper-1136{
+  margin: auto;
+  max-width: 1136px;
+  box-sizing: border-box;
+}

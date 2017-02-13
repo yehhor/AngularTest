@@ -1,0 +1,31 @@
+﻿<main class="container">
+    <ul>
+        <li>
+            <div  class="in-stock">only {{p.stock}} left in stock</div>
+            <div class="row top-items">
+                <div class="col-md-2 img-wrapper">
+                    <img ng-src="/{{p.imgUrl}}" alt="item.png">
+                </div>
+                <div class="col-md-9 description">
+                    <h4 contenteditable ng-model="p.name" class="name">{{p.name}}</h4>
+                    <ul class="props">
+                        <li ng-repeat="prop in p.properties">{{prop}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bottom-items">
+                <div class="col-md-12 price">
+                    <span class="price-word">price: </span>
+                    <span>
+                        <span class="main-price">
+                        {{p.price | currency}}
+                        </span> + {{p.shipping}} shipping
+                </span>
+                </div>
+                <div class="col-md-3 col-md-offset-9 submit">
+                    <button ng-click="addToCart(p)" class="fa fa-shopping-cart">add to cart</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</main>

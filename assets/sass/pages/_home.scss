@@ -1,0 +1,102 @@
+main{
+  padding-top: 20px;
+  position: relative;
+  .filter_by{
+    button{
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  >ul{
+    >li{
+      border: 1px solid black;
+      padding: 20px;
+      box-sizing: border-box;;
+      display: block;
+      margin-bottom: 20px;
+      position: relative;
+      .in-stock{
+        position: absolute;
+        color: green;
+        font-size: 20px;
+        line-height: 20px;
+        right: 20px;
+        top: 20px;
+      }
+      .top-items{
+        height: 80%;
+        .img-wrapper{
+          vertical-align: middle;
+          height: 200px;
+          position: relative;
+          img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        .description{
+          vertical-align: middle;
+          .name{
+            font-size: 20px;
+            color: grey;
+            margin-bottom: 15px;
+            font-weight: 600;
+          }
+          .props{
+            list-style: disc outside;
+            padding-left: 17px;
+            box-sizing: border-box;
+            li{
+              box-sizing: border-box;
+              padding: 0 0 0 20px;
+              color: grey;
+              font-size: 16px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      .bottom-items{
+        font-size: 16px;
+        margin-top: 10px;
+        color: grey;
+        .input-wr{
+          display: flex;
+          justify-content: space-between;
+        }
+        .price-word{
+          vertical-align: top;
+        }
+        >span{
+          font-size: 16px;
+          vertical-align: bottom;
+        }
+        .main-price{
+          font-size: 20px;
+          color: darkred;
+          vertical-align: bottom;
+        }
+        .submit{
+          button{
+            width: 100%;
+            background-color: #ac7100;;
+            outline: none;
+            border: none;
+            color: #fff;
+            font-size: 20px;
+            line-height: 36px;
+            position: relative;
+            &:before{
+              position: absolute;
+              left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

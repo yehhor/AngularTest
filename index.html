@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html >
+<html ng-app="main-app">
+<head>
+    <title>Starter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1"/>
+    <link href="assets/css/common.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <script src="assets/js/lib/angular.min.js"></script>
+    <script src="assets/js/app/app.js"></script>
+    <script src="assets/js/app/factories/Phones.js"></script>
+    <script src="assets/js/app/factories/Cart.js"></script>"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+
+</head>
+<body ng-controller="MainCtrl">
+<header class="">
+    <div class="container-fluid">
+        <div class="col-sm-2 col-sm-offset-10">
+            <form action="#">
+                <input type="text" name="search" ng-model="search" placeholder="Search">
+            <span class="fa fa-shopping-cart fa-2x cart" ng-mouseover="isPopupShown = true">
+                <span ng-show="cartItems.length > 0"  class="number">{{cartItems.length}}</span>
+                <div ng-show="isPopupShown" ng-mouseout="isPopupShown = false" class="popup">
+                    <div ng-repeat="item in cartItems track by $index " class="item">
+                        <div class="img-wrapper">
+                            <img ng-src="{{item.imgUrl}}" alt="img.png">
+                        </div>
+                        <div class="right-side">
+                            <div class="name">{{item.name}}</div>
+                            <div class="price">
+                                <span class="price-word">price: </span>
+                            <span>
+                                <span class="main-price">
+                                {{item.price | currency}}
+                                </span> + {{item.shipping | currency}} shipping
+                            </span>
+                            </div>
+                        </div>
+                        <div class="removeFromBasket" ng-click="removeFromBasket(item)"></div>
+                    </div>
+
+                    <div class="total">
+                        total: <span>{{totalPrice | currency}}</span>
+                    </div>
+                </div>
+            </span>
+            </form>
+        </div>
+    </div>
+
+</header>
+
+
+<section ui-view></section>
+
+<section ng-view ></section>
+<script src="https://use.fontawesome.com/27c19b182b.js"></script>
+<script src="assets/js/lib/jquery-2.1.4.min.js"></script>
+<script src="assets/js/common.js"></script>
+</body>
+</html>

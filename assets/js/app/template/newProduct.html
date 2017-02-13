@@ -1,0 +1,41 @@
+<main class="container">
+    <ul>
+        <li>
+            <form action="#" name="newProduct" ng-submit="createNewProduct()">
+                <div class="row top-items">
+                    <div class="col-md-2 img-wrapper">
+                        <img ng-src="/{{np.imgUrl}}" alt="item.png">
+                    </div>
+                    <div class="col-md-9 description">
+                        product name: <input type="text" ng-model="np.name">
+                        <ul class="props">
+                            <li ng-repeat="p in np.properties track by $index">
+                                property : <input type="text" ng-model="np.properties[$index]">
+                                <span ng-click="delProp($index)">del property</span>
+                            </li>
+                        </ul>
+                        <div ng-click="addProp()"> add prop</div>
+                    </div>
+                </div>
+                <div class="row bottom-items">
+                    <div class="col-md-5 price">
+                        <div class="input-wr">
+                            category: <input type="text" ng-model="np.category">
+                        </div>
+                        <div class="input-wr">
+                            price: <input type="text" ng-model="np.price">
+                        </div>
+                        <div class="input-wr">
+                            shipping: <input type="text" ng-model="np.shipping">
+
+                        </div>
+                        </span>
+                    </div>
+                    <div class="col-md-3 col-md-offset-9 submit">
+                        <button class="fa fa-shopping-cart">createProduct</button>
+                    </div>
+                </div>
+            </form>
+        </li>
+    </ul>
+</main>
