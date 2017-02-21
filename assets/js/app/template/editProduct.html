@@ -1,0 +1,36 @@
+<main class="container">
+    <ul>
+        <li>
+            <div  class="in-stock">only <input type="number" ng-model="p.stock" style="width: 50px; position: relative; z-index: 2;"> left in stock</div>
+            <div class="row top-items">
+                <div class="col-md-2 img-wrapper">
+                    <img ng-src="/{{p.imgUrl}}" alt="item.png">
+                </div>
+                <div class="col-md-9 description">
+                    <span>Название товара</span>
+                    <input type="text" ng-model="p.name" class="name" style="width: 50%">
+                    <ul class="props">
+                        <li ng-repeat="prop in p.properties" style="margin-top: 5px;">
+                            <!--ToDo refactor to objects-->
+                            <input type="text" ng-model="p.properties[$index]" placeholder="Свойство">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bottom-items">
+                <div class="col-md-12 price">
+                    <span class="price-word">price: </span>
+                    <span>
+                        <span class="main-price">
+                            <input type="number" ng-model="p.price" style="width: 100px"> $
+                        </span> + <input type="number" ng-model="p.shipping" style="width: 100px"> $ shipping
+                </span>
+                </div>
+                <div class="col-md-3 col-md-offset-9 submit">
+                    <button ng-click="save()" class="fa fa-shopping-cart">Save</button>
+                    <button class="remove" ng-click="removeProduct(p)" class="fa fa-shopping-cart">delete product</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</main>

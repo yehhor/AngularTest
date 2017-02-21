@@ -1,0 +1,33 @@
+    <div class="container-fluid">
+        <div class="col-sm-2 col-sm-offset-10">
+            <form action="#">
+                <input type="text" name="search" ng-model="search" placeholder="Search">
+            <span class="fa fa-shopping-cart fa-2x cart" ng-mouseover="isPopupShown = true">
+                <span ng-show="cartItems.length > 0"  class="number">{{cartItems.length}}</span>
+                <div ng-show="isPopupShown" ng-mouseout="isPopupShown = false" class="popup">
+                    <div ng-repeat="item in cartItems track by $index " class="item">
+                        <div class="img-wrapper">
+                            <img ng-src="{{item.imgUrl}}" alt="img.png">
+                        </div>
+                        <div class="right-side">
+                            <div class="name">{{item.name}}</div>
+                            <div class="price">
+                                <span class="price-word">price: </span>
+                            <span>
+                                <span class="main-price">
+                                {{item.price | currency}}
+                                </span> + {{item.shipping | currency}} shipping
+                            </span>
+                            </div>
+                        </div>
+                        <div class="removeFromBasket" ng-click="removeFromBasket(item)"></div>
+                    </div>
+
+                    <div class="total">
+                        total: <span>{{totalPrice.price | currency}}</span>
+                    </div>
+                </div>
+            </span>
+            </form>
+        </div>
+    </div>

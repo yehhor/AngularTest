@@ -1,0 +1,44 @@
+<main class="container" ng-controller="MainCtrl">
+    <div class="no-results" ng-show=""></div>
+
+    <div class="filter_by">
+        <form name="someForm">
+            <button ng-click="sortBy('category')">by category</button>
+            <button ng-click="sortBy('name')">by name</button>
+            <button>by smth else</button>
+            <button ng-click="redirectToCreateNew()">createNew product</button>
+            <input type="checkbox" ng-model="reverseSort"> reverse
+        </form>
+
+    </div>
+    <ul>
+        <li ng-click="redirectTo(p.id)" ng-repeat="p in phones | searchName:search.searchName | orderBy:orderProp">
+            <div class="in-stock">only {{p.stock}} left in stock</div>
+            <div class="row top-items">
+                <div class="col-md-2 img-wrapper">
+                    <img ng-src="/{{p.imgUrl}}" alt="item.png">
+                </div>
+                <div class="col-md-9 description">
+                    <h4 class="name">{{p.name}}</h4>
+                    <ul class="props">
+                        <li ng-repeat="prop in p.properties">{{prop}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bottom-items">
+                <div class="col-md-12 price">
+                    <span class="price-word">price: </span>
+                    <span>
+                        <span class="main-price">
+                        {{p.price | currency}}
+                        </span> + {{p.shipping}} shipping
+                </span>
+                </div>
+                <div class="col-md-3 col-md-offset-9 submit">
+                    <button ng-click="editProduct($event, p)" class="fa fa-shopping-cart">edit</button>
+                    <button ng-click="addToCart(p, $event)" class="fa fa-shopping-cart">add to cart</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</main>
