@@ -82,6 +82,7 @@ main{
         }
         .submit{
           button{
+            margin-top: 5px;
             width: 100%;
             background-color: #ac7100;;
             outline: none;
@@ -90,6 +91,9 @@ main{
             font-size: 20px;
             line-height: 36px;
             position: relative;
+            &.remove{
+              background-color: darkred;
+            }
             &:before{
               position: absolute;
               left: 20px;
@@ -98,5 +102,15 @@ main{
         }
       }
     }
+  }
+}
+
+
+.customModalSize{
+  text-align: center;
+  .modal-dialog{
+    text-align: left;
+    display: inline-block;
+    width: auto;
   }
 }

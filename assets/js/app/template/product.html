@@ -1,5 +1,4 @@
-﻿<main class="container">
-    <ul>
+﻿    <ul>
         <li>
             <div  class="in-stock">only {{p.stock}} left in stock</div>
             <div class="row top-items">
@@ -24,8 +23,8 @@
                 </div>
                 <div class="col-md-3 col-md-offset-9 submit">
                     <button ng-click="addToCart(p)" class="fa fa-shopping-cart">add to cart</button>
+                    <button class="remove" ng-click="removeProduct(p)" class="fa fa-shopping-cart">delete product</button>
                 </div>
             </div>
         </li>
     </ul>
-</main>
